@@ -67,6 +67,26 @@ if (!function_exists('sw_register_my_post_types')) { function sw_register_my_pos
             'supports' => array('title')
         )
     );
+    register_post_type('skills',
+        array(
+            'labels' => array(
+                'name' => 'Skills',
+                'singular_name' => 'Skill',
+                'add_new' => 'Post New Skill',
+                'add_new_item' => 'Post New Skill',
+                'edit_item' => 'Edit Skill',
+                'new_item' => 'New Skill',
+                'all_items' => 'All Skills',
+                'menu_name' => 'Skills'
+            ),
+            'menu_icon' => 'dashicons-thumbs-up',
+            'menu_position' => 22,
+            'has_archive' => true,
+            'public' => true,
+            'show_in_rest' => true,
+            'supports' => array('title')
+        )
+    );
 
 }} add_action('init', 'sw_register_my_post_types');
 
