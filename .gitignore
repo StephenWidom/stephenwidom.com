@@ -1,3 +1,5 @@
 node_modules
 .htaccess
 uploads/
+data.json
+pw.json
