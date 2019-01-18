@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
+import { Link } from 'react-router-dom';
 
 const Portfolio = (props) => (
     <div id="portfolio">
@@ -8,7 +9,7 @@ const Portfolio = (props) => (
             <h1>Portfolio</h1>
             {props.portfolio.map((item) =>
             <div key={item}>
-                Hi
+                <Link to={`/portfolio/${item.id}`}>Test</Link>
             </div>
             )}
         </div>
