@@ -13,6 +13,7 @@
     "react-dom": "^16.4.2",
     "react-html-parser": "^2.0.2",
     "react-minimal-pie-chart": "^3.3.0",
+    "react-responsive-carousel": "^3.1.45",
     "react-router-dom": "^4.3.1",
     "react-transition-group": "1.x",
     "react-typing-animation": "^1.4.0",

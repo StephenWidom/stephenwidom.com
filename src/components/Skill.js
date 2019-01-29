@@ -69,7 +69,7 @@ const Skill = (props) => {
                 animate={true}
             />
             <h5 style={titleStyle}>{skill.title.rendered}</h5>
-            <span style={spanStyle}>{yearsExperience}{yearsExperience >= scale && "+"} years</span>
+            <span style={spanStyle}>{yearsExperience}{yearsExperience >= scale && "+"} year{yearsExperience > 1 && "s"}</span>
         </div>
     )
 

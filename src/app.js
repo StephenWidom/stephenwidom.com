@@ -44,7 +44,7 @@ class App extends React.Component {
 
     getSite = (sections) => {
         sections.forEach((section) => {
-            const endpoint = `/cms/wp-json/wp/v2/${section}?per_page=100`;
+            const endpoint = `/cms/wp-json/wp/v2/${section}?per_page=100&_embed`;
             const myRequest = new Request(endpoint);
             fetch(myRequest).then((response) => {
                 return response.json();
