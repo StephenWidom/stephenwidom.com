@@ -100,3 +100,17 @@ h2 {
 h5 {
     font-family: 'Roboto Condensed', sans-serif;
 }
+
+.slide:not(.selected) {
+    cursor: pointer;
+}
+
+ul.thumbs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carousel .slide {
+    background: transparent;
+}
