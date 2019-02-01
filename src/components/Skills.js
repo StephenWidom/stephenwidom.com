@@ -10,7 +10,7 @@ const Skills = (props) => {
     };
 
     return (
-        <div id="skills">
+        <section id="skills">
             {typeof props.skills !== undefined && (
             <div className="container">
                 <h2>Skills</h2>
@@ -21,7 +21,7 @@ const Skills = (props) => {
                 </div>
             </div>
             )}
-        </div>
+        </section>
     )
 
 }
