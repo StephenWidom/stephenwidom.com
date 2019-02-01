@@ -5,7 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const Portfolio = (props) => (
-    <div id="portfolio">
+    <section id="portfolio">
         {typeof props.portfolio !== undefined && (
         <div className="container">
             <h2>Portfolio</h2>
@@ -30,7 +30,7 @@ const Portfolio = (props) => (
             </Carousel>
         </div>
         )}
-    </div>
+    </section>
 )
 
 export default Portfolio;

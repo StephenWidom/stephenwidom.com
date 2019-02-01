@@ -16,6 +16,32 @@ html, body {
     position: relative;
 }
 
+header {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+header nav ul {
+    list-style: none;
+    font-size: 0;
+}
+
+header nav ul li {
+    font-size: 14pt;
+    display: inline-block;
+}
+
+header nav ul li:not(:first-child) {
+    margin-left: 10px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+}
+
 .focus-photo,
 .initial-photo {
     position: fixed;
@@ -80,8 +106,7 @@ html, body {
     background: #ecf0f1;
 }
 
-#technologies,
-#skills {
+section {
     padding: 50px 0;
 }
 

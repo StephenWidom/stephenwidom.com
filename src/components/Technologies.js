@@ -10,7 +10,7 @@ const Technologies = (props) => {
     };
 
     return (
-        <div id="technologies">
+        <section id="technologies">
             {typeof props.technologies !== undefined && (
                 <div className="container">
                     <h2>Technologies</h2>
@@ -21,7 +21,7 @@ const Technologies = (props) => {
                     </div>
                 </div>
             )}
-        </div>
+        </section>
     )
 
 }
