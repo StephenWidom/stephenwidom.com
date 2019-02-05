@@ -27,19 +27,25 @@ header {
 header nav ul {
     list-style: none;
     font-size: 0;
+    padding: 10px 0;
 }
 
 header nav ul li {
-    font-size: 14pt;
+    font-size: 18px;
     display: inline-block;
 }
 
 header nav ul li:not(:first-child) {
-    margin-left: 10px;
+    margin-left: 40px;
 }
 
 header nav ul li a {
     text-decoration: none;
+    color: #000;
+}
+
+header nav ul li a.active {
+    color: #7f7d7d;
 }
 
 .focus-photo,
@@ -102,16 +108,8 @@ header nav ul li a {
     min-height: 100vh;
 }
 
-#technologies {
-    background: #ecf0f1;
-}
-
 section {
-    padding: 50px 0;
-}
-
-#skills {
-    background: #bdc3c7;
+    padding: 60px 0;
 }
 
 h2 {
@@ -139,3 +137,4 @@ ul.thumbs {
 .carousel .slide {
     background: transparent;
 }
+
