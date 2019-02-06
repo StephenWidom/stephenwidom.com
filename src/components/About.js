@@ -21,7 +21,7 @@ class About extends React.Component {
                     <p>It wasn't long before my first website was live – and ugly. CSS was next on my agenda; and when I wanted a way to interact with visitors (through forms, surveys, etc.), I began learning PHP.</p>
                     <h4>Constantly learning and improving.</h4>
                     <p>Even though I started with coding more than ten years ago, I know there is still so much to learn. That's why I order books from Amazon monthly. That's why I follow top developers on Twitter and subscribe to a dozen web-related subreddits to keep up-to-date on the latest trends and techniques. Front end development is a passion of mine now, and something I strive to get better at every day.</p>
-                    <p>Have questions? Visit the contact page, connect with me using the social media links below, or e-mail me at contact[at]stephenwidom.com to discuss your next project or to set up a time to jam.</p>
+                    <p>Have questions? E-mail me at <a href="mailto:stevewidom@gmail.com">stevewidom@gmail.com</a> to discuss your next project or to set up a time to jam.</p>
                 </div>
             </section>
         );
