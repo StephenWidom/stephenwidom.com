@@ -1,5 +1,5 @@
 import React from 'react';
-import { CSSTransitionGroup } from 'react-transition-group';
+import Transition from 'react-transition-group/Transition';
 
 class Intro extends React.Component {
 
@@ -8,18 +8,31 @@ class Intro extends React.Component {
     }
 
     render() {
+
+        const defaultStyle = {
+            transition: "opacity 2.5s ease",
+            opacity: 0,
+            background: "#ffffff url('./images/live-bw-2x-edit.jpg') center center no-repeat",
+            backgroundSize: "cover"
+        }
+
+        const transitionStyles = {
+            entering: { opacity: 0 },
+            entered: { opacity: 1 }
+        }
+
         return (
             <div id="intro">
-                <div class="initial-photo" style={{ background: "#ffffff url('./images/live-bw-2x.jpg') center center no-repeat", backgroundSize: "cover"}}></div>
-                <CSSTransitionGroup
-                    transitionName="fade-in"
-                    transitionAppear={true}
-                    transitionAppearTimeout={5000}
-                    transitionEnter={false}
-                    transitionLeave={false}
+                <div className="initial-photo" style={{ background: "#ffffff url('./images/live-bw-2x.jpg') center center no-repeat", backgroundSize: "cover"}}></div>
+                <Transition
+                   in={true} 
+                   timeout={900}
+                   appear={true}
                 >
-                    <div class="focus-photo" style={{ background: "#ffffff url('./images/live-bw-2x-edit.jpg') center center no-repeat", backgroundSize: "cover"}}></div>
-                </CSSTransitionGroup>
+                    {(state) => (
+                    <div className="focus-photo" style={{ ...defaultStyle, ...transitionStyles[state] }}></div>
+                    )}
+                </Transition>
                 <h1 className="container">Looking for a <span>rock star</span> developer?</h1>
                 <div className="sigh container">Ugh, I'm not proud of that.</div>
             </div>
