@@ -11,9 +11,9 @@ class Resume extends React.Component {
             <section id="resume">
                 <div className="container content">
                     <h1>Stephen Widom</h1>
-                    <h2>New York, NY - stevewidom@gmail.com</h2>
+                    <h2>Brooklyn, NY - <a href="mailto:stevewidom@gmail.com">stevewidom@gmail.com</a></h2>
                     <h3>Work Experience:</h3>
-                    <p>Strategic Insight | June 2016 - Present<br />Web Developer | New York, NY</p>
+                    <p>Strategic Insight | June 2016 - Present<br />Senior Front End Developer | New York, NY</p>
                     <ul>
                         <li>Use ReactJS (and React Router, ReactDOM) with Webpack and Babel to create dynamic web applications</li>
                         <li>Work with DevOps to create &amp; secure development, staging, and production environments</li>
