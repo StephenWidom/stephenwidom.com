@@ -3,35 +3,64 @@ import ReactHtmlParser from 'react-html-parser';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
+import Loading from './Loading';
 
-const Portfolio = (props) => (
-    <section id="portfolio">
-        {typeof props.portfolio !== undefined && (
-        <div className="container">
-            <h2>Portfolio</h2>
-            <Carousel
-                showArrows={false}
-                showIndicators={false}
-                showStatus={false}
-                infiniteLoop={true}
-                useKeyboardArrows={true}
-                emulateTouch={true}
-                centerMode={true}
-                centerSlidePercentage={70}
-            >
-            {props.portfolio.map((item) =>
-                <div key={item}>
-                    {item._embedded && (
-                    <img src={item._embedded['wp:featuredmedia'][0].source_url} />
+class Portfolio extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isLoading: true,
+            portfolio: null
+        }
+    }
+
+    componentWillMount() {
+        const endpoint = '/cms/wp-json/wp/v2/portfolio?per_page=100&_embed';
+        const myRequest = new Request(endpoint);
+        fetch(myRequest).then((response) => response.json()).then((portfolio) => {
+            this.setState(() => {
+                return { portfolio }
+            }, () => { this.setState(() => { return {isLoading: false} })});
+        });
+    }
+
+    render() {
+        return (
+            <section id="portfolio">
+                {this.state.isLoading && (
+                    <Loading />
+                ) || (
+                <div className="container">
+                    <h2>Portfolio</h2>
+                    {!!this.state.portfolio && (
+                    <Carousel
+                        showArrows={false}
+                        showIndicators={false}
+                        showStatus={false}
+                        infiniteLoop={true}
+                        useKeyboardArrows={true}
+                        emulateTouch={true}
+                        centerMode={true}
+                        centerSlidePercentage={70}
+                    >
+                        {this.state.portfolio.map((item) =>
+                        <div key={item}>
+                            {item._embedded && (
+                            <img src={item._embedded['wp:featuredmedia'][0].source_url} />
+                            )}
+                            <Link to={`/portfolio/${item.id}`}>{ReactHtmlParser(item.title.rendered)}</Link>
+                        </div>
+                        )}
+                    </Carousel>
                     )}
-                    <Link to={`/portfolio/${item.id}`}>{ReactHtmlParser(item.title.rendered)}</Link>
                 </div>
-            )}
-            </Carousel>
-        </div>
-        )}
-    </section>
-)
+                )}
+            </section>
+        )
+    }
+}
 
 export default Portfolio;
 

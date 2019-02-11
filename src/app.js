@@ -11,7 +11,6 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            portfolio: null,
             technologies: null,
             skills: null,
             scale: 5
@@ -40,7 +39,7 @@ class App extends React.Component {
     }
 
     componentWillMount = () => {
-        this.getSite(["portfolio", "technologies", "skills"]);
+        this.getSite(["technologies", "skills"]);
     }
 
     getSite = (sections) => {
@@ -59,19 +58,6 @@ class App extends React.Component {
         });
     }
 
-    filterByTechnology = e => {
-        const thisTech = e.target.innerHTML;
-        this.setState((prevState) => {
-            return {
-                display: prevState.portfolio.filter((entry) => {
-                    return entry.acf.technologies.find((tech) => {
-                        return tech.post_title == thisTech;
-                    })
-                })
-            }
-        }, () => console.log(this.state));
-    }
-
     changeScale = () => {
         this.setState((prevState) => {
             const scale = (prevState.scale == 10) ? 5 : 10;
@@ -87,7 +73,6 @@ class App extends React.Component {
                 <AppRouter
                     technologies={this.state.technologies}
                     skills={this.state.skills}
-                    portfolio={this.state.portfolio}
                     scale={this.state.scale}
                     colors={this.colors}
                 />
