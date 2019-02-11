@@ -61,14 +61,22 @@
     .slackmojis li:nth-child(2n) {
         margin-right: 0;
     }
+    .initial-photo {
+        background: #fff url('./images/live-bw-2x.jpg') right center no-repeat;
+        background-size: cover;
+    }
+    .focus-photo {
+        background: #fff url('./images/live-bw-2x-edit.jpg') right center no-repeat;
+        background-size: cover;
+    }
+    #intro h1 {
+        text-shadow: 1px 1px #000, 10px 10px 30px #000, -10px -10px 20px #000;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .container {
         width: 300px;
-    }
-    #intro h1 {
-        text-shadow: 1px 1px #000, 10px 10px 30px #000, -10px -10px 20px #000;
     }
     h2 {
         font-size: 40px;
