@@ -12,7 +12,7 @@ import NotFound from '../components/NotFound';
 
 const AppRouter = (props) => {
 
-    const { portfolio, technologies, skills, colors, scale } = props;
+    const { portfolio, technologies, skills, slackmojis, resume, colors, scale, updateCache } = props;
 
     return (
         <BrowserRouter>
@@ -20,12 +20,12 @@ const AppRouter = (props) => {
                 <Header />
                 <Switch>
                     <Route path="/" exact component={Intro} />
-                    <Route path="/portfolio" exact render={(props) => <Portfolio {...props} portfolio={portfolio} />} />
+                    <Route path="/portfolio" exact render={(props) => <Portfolio {...props} updateCache={updateCache} portfolio={portfolio} />} />
                     <Route path="/portfolio/:id" component={PortfolioItem} />
                     <Route path="/technologies" render={(props) => <Technologies {...props} colors={colors} technologies={technologies} scale={scale} />} />
                     <Route path="/skills" render={(props) => <Skills {...props} colors={colors} skills={skills} scale={scale} />} />
-                    <Route path="/fun" component={Fun} />
-                    <Route path="/resume" component={Resume} />
+                    <Route path="/fun" exact render={(props) => <Fun {...props} updateCache={updateCache} slackmojis={slackmojis} />} />
+                    <Route path="/resume" exact render={(props) => <Resume {...props} updateCache={updateCache} resume={resume} />} />
                     <Route component={NotFound} />
                 </Switch>
             </div>
