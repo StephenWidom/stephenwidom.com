@@ -1,0 +1,16 @@
+@media print {
+    #resume .resume-button,
+    header,
+    footer {
+        display: none;
+    }
+
+    * {
+        background: transparent;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
+

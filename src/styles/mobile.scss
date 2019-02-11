@@ -1,0 +1,84 @@
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 1120px
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .container {
+        width: 960px;
+    }
+    #intro h1 {
+        font-size: 40px;
+    }
+    #intro h1 span {
+        font-size: 50px;
+    }
+    #intro .sigh {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .container {
+        width: 767px;
+    }
+    .slackmojis li,
+    .slackmojis li:nth-child(6n) {
+        width: 22%;
+        margin: 0 4% 4% 0;
+    }
+    .slackmojis li:nth-child(4n) {
+        margin-right: 0;
+    }
+    header nav ul li {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: 480px;
+    }
+    .bm-burger-button {
+        display: block;
+    }
+    header {
+        display: none;
+    }
+    #intro h1 span {
+        display: block;
+    }
+    h2 {
+        font-size: 46px;
+    }
+    .slackmojis li,
+    .slackmojis li:nth-child(6n),
+    .slackmojis li:nth-child(4n) {
+        width: 45%;
+        margin: 0 5% 5% 0;
+    }
+    .slackmojis li:nth-child(2n) {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 300px;
+    }
+    #intro h1 {
+        text-shadow: 1px 1px #000, 10px 10px 30px #000, -10px -10px 20px #000;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    .slackmojis li,
+    .slackmojis li:nth-child(6n),
+    .slackmojis li:nth-child(4n),
+    .slackmojis li:nth-child(2n) {
+        width: 100%;
+        margin: 0 0 5% 0;
+    }
+}
+
