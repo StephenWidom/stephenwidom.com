@@ -17,12 +17,30 @@ class Portfolio extends React.Component {
     }
 
     componentWillMount() {
+        if (this.props.portfolio !== null) {
+            this.setState(() => {
+                return {
+                    portfolio: this.props.portfolio,
+                    isLoading: false
+                }
+            }, () => console.log('hi', this.state));
+        } else {
+            this.getPortfolio();
+        }
+    }
+
+    getPortfolio = () => {
         const endpoint = '/cms/wp-json/wp/v2/portfolio?per_page=100&_embed';
         const myRequest = new Request(endpoint);
         fetch(myRequest).then((response) => response.json()).then((portfolio) => {
             this.setState(() => {
                 return { portfolio }
-            }, () => { this.setState(() => { return {isLoading: false} })});
+            }, () => {
+                this.setState(() => {
+                    return { isLoading: false }
+                });
+                this.props.updateCache('portfolio', portfolio);
+            });
         });
     }
 

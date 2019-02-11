@@ -13,13 +13,32 @@ class Fun extends React.Component {
     }
 
     componentWillMount() {
+        if (this.props.slackmojis !== null) {
+            this.setState(() => {
+                return {
+                    slackmojis: this.props.slackmojis,
+                    isLoading: false
+                }
+            });
+        } else {
+            this.getFun();
+        }
+
+    }
+
+    getFun = () => {
         const endpoint = '/cms/wp-json/wp/v2/slackmoji?per_page=100&_embed&filter[orderby]=title&order=asc';
         const myRequest = new Request(endpoint);
         fetch(myRequest).then((response) => response.json()).then((slackmojis) => {
             console.log(slackmojis);
             this.setState(() => {
                 return { slackmojis }
-            }, () => { this.setState(() => { return {isLoading: false} })});
+            }, () => {
+                this.setState(() => {
+                    return { isLoading: false }
+                });
+                this.props.updateCache('slackmojis', slackmojis);
+            });
         });
     }
 

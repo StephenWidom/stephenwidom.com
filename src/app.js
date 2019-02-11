@@ -11,8 +11,11 @@ class App extends React.Component {
         super(props);
 
         this.state = {
+            portfolio: null,
             technologies: null,
             skills: null,
+            slackmojis: null,
+            resume: null,
             scale: 5
         };
 
@@ -67,14 +70,26 @@ class App extends React.Component {
         });
     }
 
+    updateCache = (key, value) => {
+        this.setState(() => {
+            return {
+                [key]: value
+            }
+        }, () => console.log(this.state));
+    }
+
     render() {
         return (
             <div>
                 <AppRouter
+                    portfolio={this.state.portfolio}
                     technologies={this.state.technologies}
                     skills={this.state.skills}
+                    slackmojis={this.state.slackmojis}
+                    resume={this.state.resume}
                     scale={this.state.scale}
                     colors={this.colors}
+                    updateCache={this.updateCache}
                 />
             </div>
         );
