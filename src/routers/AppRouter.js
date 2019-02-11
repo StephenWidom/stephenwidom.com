@@ -8,18 +8,19 @@ import Portfolio from '../components/Portfolio';
 import PortfolioItem from '../components/PortfolioItem';
 import Resume from '../components/Resume';
 import Fun from '../components/Fun';
+import Footer from '../components/Footer';
 import NotFound from '../components/NotFound';
 
 const AppRouter = (props) => {
 
-    const { portfolio, technologies, skills, slackmojis, resume, colors, scale, updateCache } = props;
+    const { about, portfolio, technologies, skills, slackmojis, resume, colors, scale, updateCache } = props;
 
     return (
         <BrowserRouter>
             <div>
                 <Header />
                 <Switch>
-                    <Route path="/" exact component={Intro} />
+                    <Route path="/" exact render={(props) => <Intro {...props} updateCache={updateCache} about={about} />} />
                     <Route path="/portfolio" exact render={(props) => <Portfolio {...props} updateCache={updateCache} portfolio={portfolio} />} />
                     <Route path="/portfolio/:id" component={PortfolioItem} />
                     <Route path="/technologies" render={(props) => <Technologies {...props} colors={colors} technologies={technologies} scale={scale} />} />
@@ -28,6 +29,7 @@ const AppRouter = (props) => {
                     <Route path="/resume" exact render={(props) => <Resume {...props} updateCache={updateCache} resume={resume} />} />
                     <Route component={NotFound} />
                 </Switch>
+                <Footer />
             </div>
         </BrowserRouter>
     );

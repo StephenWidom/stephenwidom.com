@@ -10,13 +10,6 @@ class Intro extends React.Component {
 
     render() {
 
-        const defaultStyle = {
-            transition: "opacity 2.5s ease",
-            opacity: 0,
-            background: "#ffffff url('./images/live-bw-2x-edit.jpg') center center no-repeat",
-            backgroundSize: "cover"
-        }
-
         const transitionStyles = {
             entering: { opacity: 0 },
             entered: { opacity: 1 }
@@ -40,14 +33,14 @@ class Intro extends React.Component {
         return (
             <div>
                 <div id="intro">
-                    <div className="initial-photo" style={{ background: "#ffffff url('./images/live-bw-2x.jpg') center center no-repeat", backgroundSize: "cover"}}></div>
+                    <div className="initial-photo"></div>
                     <Transition
                        in={true} 
                        timeout={900}
                        appear={true}
                     >
                         {(state) => (
-                        <div className="focus-photo" style={{ ...defaultStyle, ...transitionStyles[state] }}></div>
+                        <div className="focus-photo" style={{ ...transitionStyles[state] }}></div>
                         )}
                     </Transition>
                     <h1 className="container">Looking for a <span>rock star</span> developer?</h1>
@@ -62,7 +55,7 @@ class Intro extends React.Component {
                         )}
                     </Transition>
                 </div>
-                <About />
+                <About updateCache={this.props.updateCache} about={this.props.about} />
             </div>
         )
     }

@@ -23,7 +23,7 @@ class Portfolio extends React.Component {
                     portfolio: this.props.portfolio,
                     isLoading: false
                 }
-            }, () => console.log('hi', this.state));
+            });
         } else {
             this.getPortfolio();
         }

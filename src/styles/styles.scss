@@ -28,6 +28,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    box-shadow: 0 0 30px #ccc;
 }
 
 header nav ul {
@@ -156,7 +157,7 @@ ul.thumbs {
 
 .content h4 {
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .content p {
@@ -178,6 +179,7 @@ ul.thumbs {
 }
 
 #resume h2 {
+    text-shadow: none;
     font-family: 'Lora', serif;
     font-size: 16px;
     font-weight: normal;
@@ -204,9 +206,10 @@ ul.thumbs {
 }
 
 .resume-button {
+    background: #fff;
     display: inline-block;
-    margin: 0 10px 0 10px;
-    border: 1px solid #d8d8d8;
+    margin: 0 10px 0 0;
+    border: 1px solid #BA2A2A;
     border-radius: 2px;
     padding: 3px 8px;
     transition: background 0.2s ease;
@@ -217,11 +220,8 @@ ul.thumbs {
 }
 
 #loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    width: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
 }
@@ -258,3 +258,54 @@ ul.thumbs {
     background: #fff;
 }
 
+#skills,
+#technologies,
+#fun {
+    background: #fff url('./images/background.png') repeat;
+}
+
+.initial-photo {
+    background: #fff url('./images/live-bw-2x.jpg') center 45% no-repeat;
+    background-size: cover;
+}
+
+.focus-photo {
+    transition: opacity 2.5s ease;
+    opacity: 0;
+    background: #fff url('./images/live-bw-2x-edit.jpg') center 45% no-repeat;
+    background-size: cover;
+}
+
+footer {
+    font-size: 12px;
+    color: #fff;
+    background: #25272C;
+    color: #F6F9FC;
+    text-align: center;
+    padding: 10px 0;
+}
+
+header nav ul {
+    float: left;
+}
+
+.social {
+    float: right;
+}
+
+header nav ul.social li {
+    margin: 0 0 0 15px;
+}
+
+.social a {
+    color: #F6F9FC;
+    background: #25272C;
+    border-radius: 50%;
+    padding: 3px;
+    font-size: 16px;
+    transition: background 0.2s ease;
+}
+
+.social a:hover {
+    background: #BA2A2A;
+}

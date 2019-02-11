@@ -30,7 +30,6 @@ class Fun extends React.Component {
         const endpoint = '/cms/wp-json/wp/v2/slackmoji?per_page=100&_embed&filter[orderby]=title&order=asc';
         const myRequest = new Request(endpoint);
         fetch(myRequest).then((response) => response.json()).then((slackmojis) => {
-            console.log(slackmojis);
             this.setState(() => {
                 return { slackmojis }
             }, () => {
@@ -44,12 +43,8 @@ class Fun extends React.Component {
 
     render() {
 
-        const sectionStyle = {
-            background: '#fff url("./images/background.png") repeat'
-        }
-
         return (
-            <section id="fun" style={sectionStyle}>
+            <section id="fun">
             {this.state.isLoading && (
                 <Loading />
             ) || (

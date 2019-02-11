@@ -49,6 +49,11 @@ class Header extends React.Component {
                                 <li><NavLink to="/fun">Fun</NavLink></li>
                                 <li><NavLink to="/resume">Resume</NavLink></li>
                             </ul>
+                            <ul className="social">
+                                <li><a href="https://github.com/StephenWidom" target="_blank"><i className="fab fa-fw fa-github"></i></a></li>
+                                <li><a href="http://stackoverflow.com/users/2329542/stephenwidom" target="_blank"><i className="fab fa-fw fa-stack-overflow"></i></a></li>
+                                <li><a href="http://www.linkedin.com/pub/stephen-widom/22/9b2/739" target="_blank"><i className="fab fa-fw fa-linkedin"></i></a></li>
+                            </ul>
                         </nav>
                     </header>
                     )}

@@ -9,12 +9,8 @@ const Technologies = (props) => {
         justifyContent: 'center',
     };
 
-    const sectionStyle = {
-        background: '#fff url("./images/background.png") repeat'
-    }
-
     return (
-        <section id="technologies" style={sectionStyle}>
+        <section id="technologies">
             {typeof props.technologies !== undefined && (
                 <div className="container">
                     <h2>Technologies</h2>

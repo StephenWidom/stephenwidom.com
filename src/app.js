@@ -11,6 +11,7 @@ class App extends React.Component {
         super(props);
 
         this.state = {
+            about: null,
             portfolio: null,
             technologies: null,
             skills: null,
@@ -56,7 +57,7 @@ class App extends React.Component {
                     return {
                         [section]: response
                     }
-                }, () => console.log(this.state));
+                });
             });
         });
     }
@@ -75,13 +76,14 @@ class App extends React.Component {
             return {
                 [key]: value
             }
-        }, () => console.log(this.state));
+        });
     }
 
     render() {
         return (
             <div>
                 <AppRouter
+                    about={this.state.about}
                     portfolio={this.state.portfolio}
                     technologies={this.state.technologies}
                     skills={this.state.skills}
