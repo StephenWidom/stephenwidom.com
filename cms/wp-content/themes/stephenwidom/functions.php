@@ -87,6 +87,26 @@ if (!function_exists('sw_register_my_post_types')) { function sw_register_my_pos
             'supports' => array('title')
         )
     );
+    register_post_type('slackmoji',
+        array(
+            'labels' => array(
+                'name' => 'Slackmoji',
+                'singular_name' => 'Slackmoji',
+                'add_new' => 'Post New Slackmoji',
+                'add_new_item' => 'Post New Slackmoji',
+                'edit_item' => 'Edit Slackmoji',
+                'new_item' => 'New Slackmoji',
+                'all_items' => 'All Slackmojis',
+                'menu_name' => 'Slackmojis'
+            ),
+            'menu_icon' => 'dashicons-format-status',
+            'menu_position' => 23,
+            'has_archive' => true,
+            'public' => true,
+            'show_in_rest' => true,
+            'supports' => array('title', 'thumbnail')
+        )
+    );
 
 }} add_action('init', 'sw_register_my_post_types');
 
