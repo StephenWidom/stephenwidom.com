@@ -5,7 +5,6 @@ import Intro from '../components/Intro';
 import Technologies from '../components/Technologies';
 import Skills from '../components/Skills';
 import Portfolio from '../components/Portfolio';
-import PortfolioItem from '../components/PortfolioItem';
 import Resume from '../components/Resume';
 import Fun from '../components/Fun';
 import Footer from '../components/Footer';
@@ -22,7 +21,6 @@ const AppRouter = (props) => {
                 <Switch>
                     <Route path="/" exact render={(props) => <Intro {...props} updateCache={updateCache} about={about} />} />
                     <Route path="/portfolio" exact render={(props) => <Portfolio {...props} updateCache={updateCache} portfolio={portfolio} />} />
-                    <Route path="/portfolio/:id" component={PortfolioItem} />
                     <Route path="/technologies" render={(props) => <Technologies {...props} colors={colors} technologies={technologies} scale={scale} />} />
                     <Route path="/skills" render={(props) => <Skills {...props} colors={colors} skills={skills} scale={scale} />} />
                     <Route path="/fun" exact render={(props) => <Fun {...props} updateCache={updateCache} slackmojis={slackmojis} />} />

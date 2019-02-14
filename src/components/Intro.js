@@ -43,7 +43,7 @@ class Intro extends React.Component {
                         <div className="focus-photo" style={{ ...transitionStyles[state] }}></div>
                         )}
                     </Transition>
-                    <h1 className="container">Looking for a <span>rock star</span> developer?</h1>
+                    <h1 className="container">Stephen Widom is a <span>rock star</span> developer.</h1>
                     <div className="sigh container">Ugh, I'm not proud of that.</div>
                     <Transition
                         in={true}
