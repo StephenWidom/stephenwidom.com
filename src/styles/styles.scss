@@ -442,3 +442,42 @@ header nav ul.social li {
     content: ',';
     margin-right: 5px;
 }
+
+.chart-container {
+    position: relative;
+    margin: 0 50px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 240px;
+    width: 240px;
+    flex-wrap: wrap;
+    border-radius: 50%;
+    background: #fff;
+    overflow: visible;
+}
+
+.chart {
+    width: 260px;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+}
+
+.chart-title,
+.chart-span {
+    font-size: 21px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    flex-basis: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.chart-span {
+    text-align: center;
+    font-size: 19px;
+}

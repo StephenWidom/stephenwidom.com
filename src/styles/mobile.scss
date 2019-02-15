@@ -78,6 +78,7 @@
 @media screen and (max-width: 480px) {
     .container {
         width: 300px;
+        padding: 0 15px;
     }
     h2 {
         font-size: 40px;
@@ -88,6 +89,39 @@
     .slackmojis li:nth-child(2n) {
         width: 100%;
         margin: 0 0 5% 0;
+    }
+    .bm-burger-button {
+        left: 15px;
+        top: 15px;
+    }
+    #resume h1 {
+        font-size: 22px;
+    }
+    #resume h1,
+    #resume h2 {
+        text-align: left;
+    }
+    #resume h2 {
+        font-size: 14px;
+    }
+    .resume-button {
+        display: block;
+        width: 100%;
+        margin: 0 0 10px;
+        text-align: center;
+    }
+    .print-button {
+        display: none;
+    }
+    .modal {
+        top: 5px;
+        left: 5px;
+        bottom: 5px;
+        right: 5px;
+        padding: 20px 60px;
+    }
+    .chart-container {
+        margin: 0 auto 50px;
     }
 }
 

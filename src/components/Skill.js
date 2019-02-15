@@ -59,17 +59,17 @@ const Skill = (props) => {
 
 
     return (
-        <div style={divStyle}>
+        <div className="chart-container">
             <PieChart
                 data={data}
                 lineWidth={15}
-                style={chartStyle}
                 totalValue={scale}
                 startAngle={-180}
                 animate={true}
+                className="chart"
             />
-            <h5 style={titleStyle}>{skill.title.rendered}</h5>
-            <span style={spanStyle}>{yearsExperience}{yearsExperience >= scale && "+"} year{yearsExperience > 1 && "s"}</span>
+            <h5 className="chart-title">{skill.title.rendered}</h5>
+            <span className="chart-span">{yearsExperience}{yearsExperience >= scale && "+"} year{yearsExperience > 1 && "s"}</span>
         </div>
     )
 
