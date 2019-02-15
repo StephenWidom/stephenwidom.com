@@ -42,35 +42,6 @@ class App extends React.Component {
 
     }
 
-    componentWillMount = () => {
-        this.getSite(["technologies", "skills"]);
-    }
-
-    getSite = (sections) => {
-        sections.forEach((section) => {
-            const endpoint = `/cms/wp-json/wp/v2/${section}?per_page=100&_embed`;
-            const myRequest = new Request(endpoint);
-            fetch(myRequest).then((response) => {
-                return response.json();
-            }).then((response) => {
-                this.setState(() => {
-                    return {
-                        [section]: response
-                    }
-                });
-            });
-        });
-    }
-
-    changeScale = () => {
-        this.setState((prevState) => {
-            const scale = (prevState.scale == 10) ? 5 : 10;
-            return {
-                scale
-            }
-        });
-    }
-
     updateCache = (key, value) => {
         this.setState(() => {
             return {
