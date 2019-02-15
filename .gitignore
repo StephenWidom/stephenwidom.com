@@ -1,4 +1,4 @@
-wp-config.php
+cms/wp-config.php
 node_modules
 .htaccess
 uploads/
