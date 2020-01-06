@@ -45,12 +45,18 @@ function wp_rest_filter_add_filter_param($args, $request) {
 	if (empty($request['filter']) || !is_array($request['filter'])) {
 		return $args;
 	}
+
 	$filter = $request['filter'];
+
+	// posts_per_page
 	if (isset($filter['posts_per_page']) && ((int) $filter['posts_per_page'] >= 1 && (int) $filter['posts_per_page'] <= 100)) {
 		$args['posts_per_page'] = $filter['posts_per_page'];
 	}
+
 	global $wp;
+
 	$vars = apply_filters('rest_query_vars', $wp->public_query_vars);
+
 	function allow_meta_query($valid_vars) {
 		$valid_vars = array_merge($valid_vars, array('meta_query', 'meta_key', 'meta_value', 'meta_compare'));
 		return $valid_vars;
